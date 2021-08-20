@@ -1,0 +1,22 @@
+{
+  "user": {
+    "role": "admin",
+    "products": [
+      {
+        "name": "boba",
+        "price": 0,
+        "foto": "url"
+      },
+      {
+        "name": "boba",
+        "price": 0,
+        "foto": "url"
+      },
+      {
+        "name": "boba",
+        "price": 0,
+        "foto": "url"
+      }
+    ]
+  }
+}

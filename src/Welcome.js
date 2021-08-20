@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
+
 export default class Welcome extends Component {
   componentDidMount() {
     console.log("Welcome Component is Mounted");
+ 
   }
   componentWillUnmount() {
     console.log("Welcome Component is Unmounted");

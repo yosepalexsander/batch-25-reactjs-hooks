@@ -4,6 +4,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Welcome from "./Welcome";
 import GuestGreeting from "./GuestGreeting";
 
+import data from "./data.json"; 
 export default class App extends Component {
   constructor() {
     super();
@@ -13,19 +14,19 @@ export default class App extends Component {
         email: "",
         password: "",
       },
+      product: data.user.products
     };
   }
-
   componentDidMount() {
     console.log("App Component Mounted");
     console.log(this.state);
-  }
+    localStorage.setItem('data', JSON.stringify(data));
 
+  }
   componentDidUpdate() {
     console.log("App Component State Updated");
-    console.log(this.state);
+    localStorage.setItem('data', JSON.stringify(this.state.product))
   }
-
   handleOnSubmit = (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
@@ -38,6 +39,15 @@ export default class App extends Component {
       },
     });
     console.log(this.state);
+    this.setState((prevState => ({
+      ...prevState,
+      product: [...prevState.product, {
+        name: "boba 2",
+        price: 2132,
+        foto: "12312321.jpg"
+      }]
+    })))
+    
   };
 
   render() {
