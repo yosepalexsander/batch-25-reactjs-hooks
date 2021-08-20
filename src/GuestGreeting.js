@@ -1,13 +1,12 @@
-//import useEffect here
+import { useEffect } from "react";
 
 export default function GuestGreeting() {
+  useEffect(() => {
+    console.log("Guest Greeting Component Did Mounted");
 
-    // Create DidMount & WillUnmount with useEffect 
-    // inside it can print "Guest Greeting Component Did Mount" & "Guest Greeting Component Will Unmount"
-
-    return (
-        <div className="text-center h1 bg-secondary text-light py-5">
-            Please Login !
-        </div>
-    )
+    return () => {
+      console.log("Guest Component Will Unmount");
+    };
+  }, []);
+  return <div className="text-center h1 bg-secondary text-light py-5">Please Login !</div>;
 }
